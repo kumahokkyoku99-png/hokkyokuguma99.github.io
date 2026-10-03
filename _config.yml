@@ -1,0 +1,8 @@
+title: "Polar Bear's Blog"
+description: "My personal corner of the internet"
+author: "polarbear"
+
+theme: minima
+
+plugins:
+  - jekyll-feed

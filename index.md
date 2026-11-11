@@ -25,29 +25,36 @@ title: Home
 
   <div class="explore-grid">
 
-  <div class="explore-card explore-travel">
-      <span class="explore-number">01</span>
+  
+<section class="explore">
+  <h2>Explore</h2>
+  <p class="explore-intro">Browse topics and discover what interests you.</p>
+
+  <div class="explore-grid">
+
+  <a href="{{ '/travel/' | relative_url }}" class="explore-card explore-travel">
       <h3>Travel</h3>
       <p>Places, journeys, landscapes and experiences from around the world.</p>
-  </div>
+    </a>
 
-  <div class="explore-card explore-history">
-      <span class="explore-number">02</span>
+  <a href="{{ '/history/' | relative_url }}" class="explore-card explore-history">
       <h3>History</h3>
       <p>Historical events, cultures, societies and reflections on the past.</p>
-    </div>
+    </a>
 
-  <div class="explore-card explore-novel">
-      <span class="explore-number">03</span>
+  <a href="{{ '/novel/' | relative_url }}" class="explore-card explore-novel">
       <h3>Novel</h3>
       <p>Fiction, characters, world-building and stories in progress.</p>
-    </div>
+    </a>
 
-  <div class="explore-card explore-technology">
-      <span class="explore-number">04</span>
+  <a href="{{ '/technology/' | relative_url }}" class="explore-card explore-technology">
       <h3>Technology & Games</h3>
       <p>Programming, technology, games and things I enjoy exploring.</p>
-    </div>
+    </a>
+
+  </div>
+</section>
+
 
   </div>
 </section>

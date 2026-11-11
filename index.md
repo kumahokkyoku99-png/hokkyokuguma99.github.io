@@ -18,13 +18,6 @@ title: Home
   <p>I write about travel, history, games, drawings, and whatever else happens to interest me.</p>
   <p><a href="{{ '/blog/' | relative_url }}">Browse all posts →</a></p>
 </section>
-
-<section class="explore">
-  <h2>Explore</h2>
-  <p class="explore-intro">Browse topics and discover what interests you.</p>
-
-  <div class="explore-grid">
-
   
 <section class="explore">
   <h2>Explore</h2>
@@ -54,8 +47,3 @@ title: Home
 
   </div>
 </section>
-
-
-  </div>
-</section>
-{% include latest_posts.html %}

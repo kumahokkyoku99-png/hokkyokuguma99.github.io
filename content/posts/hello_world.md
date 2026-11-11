@@ -1,6 +1,9 @@
 ---
 title: Hello World
 date: 2026-10-08
+category: Technology
+tags:
+excerpt: My first article
 ---
 
 # Hello World

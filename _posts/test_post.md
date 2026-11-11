@@ -3,13 +3,20 @@ layout: post
 title: "My First Post"
 date: 2026-10-04
 ---
+---
+title: Hello World
+date: 2026-10-08
+category: Technology
+tags: [Blog, Python]
+excerpt: My first article on my personal website.
+---
 
-# Hello!
+# Hello World
 
-This is my first blog post.
+This is my first post on my personal website.
 
-I'm building my own little website with GitHub Pages and Jekyll.
+I am learning how to build a website from scratch.
 
-Hopefully this will become a place where I can collect my thoughts, travels, drawings, and other things I find interesting.
+## Introduction
 
-Thanks for visiting!
+**Hello, world!**

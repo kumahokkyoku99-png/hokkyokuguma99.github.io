@@ -291,6 +291,70 @@ def page_template(title, content):
 """
 
 
+
+
+# --------------------------------------------------
+# Generate Jekyll include for the homepage
+# --------------------------------------------------
+
+INCLUDES_FOLDER = Path("_includes")
+LATEST_POSTS_LIMIT = 3
+
+
+def generate_latest_posts_include(posts):
+    """
+    Generate an HTML fragment that Jekyll can insert into index.md
+    using: {% include latest_posts.html %}
+    """
+    INCLUDES_FOLDER.mkdir(parents=True, exist_ok=True)
+
+    latest_posts = sorted(posts, key=date_sort_key, reverse=True)[:LATEST_POSTS_LIMIT]
+    items = []
+
+    for post in latest_posts:
+        meta_parts = []
+        if post["date"]:
+            meta_parts.append(escape(post["date"]))
+        if post["category"]:
+            meta_parts.append(escape(post["category"]))
+
+        meta_html = (
+            f'<p class="latest-post__meta">{" · ".join(meta_parts)}</p>'
+            if meta_parts else ""
+        )
+
+        items.append(f"""
+        <article class="latest-post">
+            <h3 class="latest-post__title">
+                <a href="{SITE_BASE}/blog/{escape(post["slug"])}/">{escape(post["title"])}</a>
+            </h3>
+            {meta_html}
+            <p class="latest-post__excerpt">{escape(post["excerpt"])}</p>
+        </article>
+        """)
+
+    if items:
+        posts_html = "\\n".join(items)
+    else:
+        posts_html = '<p class="latest-post__empty">No posts yet. Check back soon!</p>'
+
+    include_html = f"""
+<section class="latest-posts">
+    <h2>Latest Posts</h2>
+    <div class="latest-posts__list">
+        {posts_html}
+    </div>
+    <p class="latest-posts__more">
+        <a href="{SITE_BASE}/blog/">View all posts →</a>
+    </p>
+</section>
+"""
+
+    output_file = INCLUDES_FOLDER / "latest_posts.html"
+    output_file.write_text(include_html.strip() + "\n", encoding="utf-8")
+    print(f"Generated homepage include: {output_file}")
+
+
 # --------------------------------------------------
 # Generate article pages and Blog index
 # --------------------------------------------------
@@ -335,6 +399,9 @@ def generate_site():
 
     # New: generate the Blog index at /blog/
     posts.sort(key=date_sort_key, reverse=True)
+
+    # Generate the latest-posts fragment used by the Jekyll homepage.
+    generate_latest_posts_include(posts)
 
     list_items = []
     for post in posts:

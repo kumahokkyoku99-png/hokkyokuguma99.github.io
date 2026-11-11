@@ -1,0 +1,65 @@
+/* Homepage Hero — Subtask 3A */
+
+.home-hero {
+  min-height: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  /* Gradient fallback remains visible until hero.jpg is added. */
+  background-image:
+    linear-gradient(rgba(12, 23, 32, 0.42), rgba(12, 23, 32, 0.58)),
+    var(--hero-image),
+    linear-gradient(135deg, #314653, #172832);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-hero__content {
+  width: 100%;
+  max-width: 760px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.home-hero__content h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.home-hero__content p {
+  margin: 0.9rem 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.home-intro {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.home-intro h2 {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    min-height: 250px;
+    margin-top: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 6px;
+  }
+
+  .home-hero__content p {
+    font-size: 0.9rem;
+  }
+}

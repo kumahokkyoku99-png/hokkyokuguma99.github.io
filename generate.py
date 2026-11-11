@@ -366,7 +366,7 @@ def generate_site():
 
     OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
 
-    post_files = sorted(POSTS_FOLDER.rglob("*.md"))
+    post_files = sorted(POSTS_FOLDER.glob("*.md"))
     posts = []
 
     for post_path in post_files:

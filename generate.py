@@ -11,6 +11,7 @@ import re
 POSTS_FOLDER = Path("content/posts")
 OUTPUT_FOLDER = Path("blog")
 SITE_NAME = "Polar Bear's Blog"
+SITE_BASE = "/hokkyokuguma99.github.io"
 
 
 # --------------------------------------------------
@@ -280,11 +281,11 @@ def page_template(title, content):
     </style>
 </head>
 <body>
-    <header><a href="/"> {escape(SITE_NAME)} </a></header>
+    <header><a href="{SITE_BASE}/"> {escape(SITE_NAME)} </a></header>
     <main>
         {content}
     </main>
-    <footer><a href="/blog/">All posts</a></footer>
+    <footer><a href="{SITE_BASE}/blog/">All posts</a></footer>
 </body>
 </html>
 """
@@ -350,7 +351,7 @@ def generate_site():
 
         list_items.append(f"""
             <li class="post-item">
-                <h2><a href="/blog/{escape(post["slug"])}/">{escape(post["title"])}</a></h2>
+                <h2><a href="{SITE_BASE}/blog/{escape(post["slug"])}/">{escape(post["title"])}</a></h2>
                 {meta_html}
                 <p class="post-excerpt">{escape(post["excerpt"])}</p>
             </li>

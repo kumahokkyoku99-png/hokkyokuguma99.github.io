@@ -109,3 +109,89 @@
     margin-top: 1.5rem;
     text-align: right;
 }
+
+
+/* Explore section */
+
+.explore {
+  margin: 55px 0;
+}
+
+.explore h2 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+
+.explore-intro {
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.explore-card {
+  position: relative;
+  min-height: 175px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #f3f4f2;
+  border: 1px solid #e5e7e3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+.explore-number {
+  color: #999;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.explore-card h3 {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+}
+
+.explore-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Individual category accents */
+
+.explore-travel {
+  background: #f1f4ed;
+}
+
+.explore-history {
+  background: #f3f0e9;
+}
+
+.explore-novel {
+  background: #f2edf3;
+}
+
+.explore-technology {
+  background: #edf2f4;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-card {
+    min-height: 145px;
+  }
+}

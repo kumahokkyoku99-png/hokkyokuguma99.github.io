@@ -2,6 +2,9 @@ title: "Polar Bear's Blog"
 description: "My personal corner of the internet"
 author: "polarbear"
 
+url: "https://kumahokkyokuma99-png.github.io"
+baseurl: "/hokkyokuguma99.github.io"
+
 theme: minima
 
 plugins:
